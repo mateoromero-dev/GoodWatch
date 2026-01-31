@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoodWatch 🎬</title>
+    <!-- Link to css -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>GoodWatch 🎬</h1>
+      <p style="color: #b3b3b3">Organize your watched and pending movies</p>
+    </header>
+
+    <!-- Buttons/interaction -->
+    <div class="controls">
+      <!-- Filter -->
+      <!-- Ids to recognize the different buttons in JS -->
+      <button id="btn-all">View all</button>
+      <button id="btn-watched">Watched ✅</button>
+      <button id="btn-pending">Pending 🕒</button>
+
+      <!-- Sort -->
+      <!-- Field value is what we send the backend -->
+      <select id="sort-select">
+        <option value="">Order: Default</option>
+        <option value="rating">Higher rating ⭐</option>
+      </select>
+    </div>
+
+    <!-- Content -->
+    <!-- JS will insert the cards here -->
+    <main>
+      <div id="movie-container">
+        <!-- Loading message -->
+        <p style="text-align: center; width: 100%">Loading movies...</p>
+      </div>
+    </main>
+
+    <!-- Link to JS -->
+    <script src="app.js"></script>
+  </body>
+</html>
+

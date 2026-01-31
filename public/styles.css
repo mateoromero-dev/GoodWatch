@@ -1,0 +1,131 @@
+/* public/styles.css */
+:root {
+  --bg-color: #1a1a1a;
+  --card-bg: #2d2d2d;
+  --text-main: #ffffff;
+  --text-sec: #b3b3b3;
+  --accent: #e50914; /* Rojo tipo Netflix */
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+/* Controles de búsqueda y filtros */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+button,
+select {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button {
+  background-color: var(--accent);
+  color: white;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #b20710;
+}
+
+select {
+  background-color: var(--card-bg);
+  color: white;
+  border: 1px solid #444;
+}
+
+/* Movie grid */
+#movie-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual cards */
+.movie-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-title {
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+  color: var(--text-main);
+}
+
+.movie-info {
+  font-size: 0.9rem;
+  color: var(--text-sec);
+  margin-bottom: 5px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+.watched-tag {
+  background-color: #2e7d32;
+  color: white;
+}
+.pending-tag {
+  background-color: #f57f17;
+  color: black;
+}
+
