@@ -3,16 +3,15 @@ import axios from "axios";
 import dotenv from "dotenv";
 
 dotenv.config();
+axios.defaults.baseURL = "http://www.omdbapi.com/";
 
-const movies = JSON.parse(fs.readFileSync("data/movies.json"));
-
-export function getMovies() {
+function readData() {
+  const movies = JSON.parse(fs.readFileSync("data/movies.json"));
+  console.log("Movie service loaded with", movies.length, "movies");
   return movies;
 }
 
-console.log("Movie service loaded with", movies.length, "movies");
-axios.defaults.baseURL = "http://www.omdbapi.com/";
-async function enrichMoviesWithApiData() {
+async function enrichMoviesWithApiData(movies = readData()) {
   const enrichedMovies = await Promise.all(
     movies.map(async (movie) => {
       try {
@@ -35,8 +34,8 @@ async function enrichMoviesWithApiData() {
   return enrichedMovies;
 }
 
-enrichMoviesWithApiData().then((enrichedMovies) => {
-  console.log("\nEnriched movies with API data:");
-  console.log(enrichedMovies);
-});
+// enrichMoviesWithApiData().then((enrichedMovies) => {
+//   console.log("\nEnriched movies with API data:");
+//   console.log(enrichedMovies);
+// });
 
