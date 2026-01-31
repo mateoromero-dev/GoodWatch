@@ -1,6 +1,6 @@
-import fs from "fs";
-import axios from "axios";
-import dotenv from "dotenv";
+const fs = require("fs");
+const axios = require("axios");
+const dotenv = require("dotenv");
 
 dotenv.config();
 axios.defaults.baseURL = "http://www.omdbapi.com/";
@@ -34,8 +34,5 @@ async function enrichMoviesWithApiData(movies = readData()) {
   return enrichedMovies;
 }
 
-// enrichMoviesWithApiData().then((enrichedMovies) => {
-//   console.log("\nEnriched movies with API data:");
-//   console.log(enrichedMovies);
-// });
+module.exports = { enrichMoviesWithApiData };
 
