@@ -1,26 +1,26 @@
 [
   {
-    "imbdID": "tt0111161",
+    "imdbID": "tt0111161",
     "status": "watched",
     "rating": "9"
   },
   {
-    "imbdID": "tt0068646",
+    "imdbID": "tt0068646",
     "status": "pending",
     "rating": ""
   },
   {
-    "imbdID": "tt0468569",
+    "imdbID": "tt0468569",
     "status": "watched",
     "rating": "10"
   },
   {
-    "imbdID": "tt0050083",
+    "imdbID": "tt0050083",
     "status": "watched",
     "rating": "7"
   },
   {
-    "imbdID": "tt0167260",
+    "imdbID": "tt0167260",
     "status": "pending",
     "rating": ""
   }
