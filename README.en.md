@@ -85,12 +85,12 @@ The backend exposes the following public endpoints:
 | Method | Route                | Description                                    | Parameters (Query Params)                                         |
 | :----- | :------------------- | :--------------------------------------------- | :---------------------------------------------------------------- |
 | `GET`  | `/api/movies`        | Returns the complete list of processed movies. | None                                                              |
-| `GET`  | `/api/movies/search` | Performs searches, filtering, and sorting.     | `title` (text), `status` ('visto'/'pendiente'), `sort` ('rating') |
+| `GET`  | `/api/movies/search` | Performs searches, filtering, and sorting.     | `title` (text), `status` ('watched'/'pending'), `sort` ('rating') |
 
 ### Request Example
 
 ```http
-GET http://localhost:3000/api/movies/search?title=godfather&status=visto&sort=rating
+GET http://localhost:3000/api/movies/search?title=godfather&status=watched&sort=rating
 ```
 
 ## 📂 Project Structure

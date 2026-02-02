@@ -85,12 +85,12 @@ El backend expone los siguientes endpoints públicos:
 | Método | Ruta                 | Descripción                                          | Parámetros (Query Params)                                          |
 | :----- | :------------------- | :--------------------------------------------------- | :----------------------------------------------------------------- |
 | `GET`  | `/api/movies`        | Retorna el listado completo de películas procesadas. | Ninguno                                                            |
-| `GET`  | `/api/movies/search` | Realiza búsquedas, filtros y ordenamientos.          | `title` (texto), `status` ('visto'/'pendiente'), `sort` ('rating') |
+| `GET`  | `/api/movies/search` | Realiza búsquedas, filtros y ordenamientos.          | `title` (texto), `status` ('watched'/'pending'), `sort` ('rating') |
 
 ### Ejemplo de consulta
 
 ```http
-GET http://localhost:3000/api/movies/search?title=godfather&status=visto&sort=rating
+GET http://localhost:3000/api/movies/search?title=godfather&status=watched&sort=rating
 ```
 
 ## 📂 Estructura del Proyecto
