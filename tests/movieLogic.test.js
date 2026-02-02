@@ -38,7 +38,7 @@ describe("Movie processing logic", () => {
   test("Must order by release year", () => {
     const result = movieSorter(mockMovies, "release");
 
-    // The Godfather -> Batman Begins -> Avatar
+    // Avatar -> Batman Begins -> The Godfather
     expect(result[0].Title).toBe("Avatar");
     expect(result[1].Title).toBe("Batman Begins");
     expect(result[2].Title).toBe("The Godfather");

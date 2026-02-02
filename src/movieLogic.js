@@ -6,7 +6,6 @@ function movieFilter(movies, status) {
 }
 
 function movieSorter(movies, sort) {
-  console.log(sort);
   if (sort === "rating") {
     movies.sort((a, b) => b.rating - a.rating);
   } else if (sort === "release") {
