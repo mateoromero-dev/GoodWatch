@@ -1,28 +1,9 @@
 const cors = require("cors");
 const express = require("express");
 const { enrichMoviesWithApiData } = require("./src/movieService.js");
-
-function movieFilter(movies, status) {
-  console.log(status);
-  movies = movies.filter((movie) => {
-    return movie.status === status;
-  });
-  return movies;
-}
-
-function movieSorter(movies, sort) {
-  if (sort === "rating") {
-    movies.sort((a, b) => b.rating - a.rating);
-  }
-  return movies;
-}
-
-function movieSearch(movies, title) {
-  movies = movies.filter((movie) =>
-    movie.Title.toLowerCase().includes(title.toLowerCase()),
-  );
-  return movies;
-}
+const { movieSearch } = require("./src/movieLogic.js");
+const { movieSorter } = require("./src/movieLogic.js");
+const { movieFilter } = require("./src/movieLogic.js");
 
 const app = express();
 const port = 3000;
@@ -42,7 +23,7 @@ app.get("/api/movies", async (_req, res) => {
 app.get("/api/movies/search", async (_req, res) => {
   let movies = await enrichMoviesWithApiData();
   const { title, status, sort } = _req.query;
-  console.log(status, sort);
+  console.log("Status: ", status, "; Sort: ", sort);
   movies = title != undefined ? movieSearch(movies, title) : movies;
   movies = status != undefined ? movieFilter(movies, status) : movies;
   movies = sort != undefined ? movieSorter(movies, sort) : movies;
