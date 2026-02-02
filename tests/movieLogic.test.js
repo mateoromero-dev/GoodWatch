@@ -6,9 +6,9 @@ const {
 
 // Mock Data
 const mockMovies = [
-  { Title: "The Godfather", status: "watched", rating: 10 },
-  { Title: "Avatar", status: "pending", rating: 0 },
-  { Title: "Batman Begins", status: "watched", rating: 8 },
+  { Title: "The Godfather", status: "watched", rating: 10, Year: 1972 },
+  { Title: "Avatar", status: "pending", rating: 0, Year: 2009 },
+  { Title: "Batman Begins", status: "watched", rating: 8, Year: 2005 },
 ];
 
 describe("Movie processing logic", () => {
@@ -34,6 +34,14 @@ describe("Movie processing logic", () => {
     expect(result[0].Title).toBe("The Godfather");
     expect(result[1].Title).toBe("Batman Begins");
     expect(result[2].Title).toBe("Avatar");
+  });
+  test("Must order by release year", () => {
+    const result = movieSorter(mockMovies, "release");
+
+    // The Godfather -> Batman Begins -> Avatar
+    expect(result[0].Title).toBe("Avatar");
+    expect(result[1].Title).toBe("Batman Begins");
+    expect(result[2].Title).toBe("The Godfather");
   });
 });
 
