@@ -17,6 +17,13 @@ function movieSorter(movies, sort) {
   return movies;
 }
 
+function movieSearch(movies, title) {
+  movies = movies.filter((movie) =>
+    movie.Title.toLowerCase().includes(title.toLowerCase()),
+  );
+  return movies;
+}
+
 const app = express();
 const port = 3000;
 
@@ -34,8 +41,9 @@ app.get("/api/movies", async (_req, res) => {
 
 app.get("/api/movies/search", async (_req, res) => {
   let movies = await enrichMoviesWithApiData();
-  const { status, sort } = _req.query;
+  const { title, status, sort } = _req.query;
   console.log(status, sort);
+  movies = title != undefined ? movieSearch(movies, title) : movies;
   movies = status != undefined ? movieFilter(movies, status) : movies;
   movies = sort != undefined ? movieSorter(movies, sort) : movies;
   res.send(movies);

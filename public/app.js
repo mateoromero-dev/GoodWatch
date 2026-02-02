@@ -3,6 +3,8 @@ const container = document.getElementById("movie-container");
 const btnAll = document.getElementById("btn-all");
 const btnWatched = document.getElementById("btn-watched");
 const btnPending = document.getElementById("btn-pending");
+const btnSearch = document.getElementById("btn-search");
+const searchInput = document.getElementById("search-input");
 const sortSelect = document.getElementById("sort-select");
 
 // Save status to use with sorting
@@ -18,10 +20,14 @@ async function fetchMovies() {
     // Building the URL
     // Get the Selector value
     const sortValue = sortSelect.value;
-
+    // Gets Search bar value
+    const searchValue = searchInput.value;
     // Base URL
     let url = `http://localhost:3000/api/movies/search?`;
 
+    if (searchValue) {
+      url += `title=${searchValue}&`;
+    }
     // If theres a status selected we add it to the URL
     if (currentStatus) {
       url += `status=${currentStatus}&`;
@@ -108,6 +114,17 @@ btnWatched.addEventListener("click", () => {
 btnPending.addEventListener("click", () => {
   currentStatus = "pending";
   fetchMovies();
+});
+
+//** Search bar listeners **/
+btnSearch.addEventListener("click", () => {
+  fetchMovies();
+});
+
+searchInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    fetchMovies();
+  }
 });
 
 // Sorting selector
