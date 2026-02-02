@@ -22,6 +22,14 @@ async function fetchMovies() {
     const sortValue = sortSelect.value;
     // Gets Search bar value
     const searchValue = searchInput.value;
+
+    if (!(currentStatus || sortValue || searchValue)) {
+      const response = await fetch("http://localhost:3000/api/movies");
+      console.log("Final URL: http://localhost:3000/api/movies"); // Debugging to see the final URL
+      const movies = await response.json();
+      renderMovies(movies);
+      return;
+    }
     // Base URL
     let url = `http://localhost:3000/api/movies/search?`;
 
@@ -135,4 +143,12 @@ sortSelect.addEventListener("change", () => {
 
 // Loads movies as soon as you open the page
 fetchMovies();
+// async function loadInitialMovies() {
+//   const response = await fetch("http://localhost:3000/api/movies/");
+//   const movies = await response.json();
+//   console.log(movies);
+//   renderMovies(movies);
+// }
+
+// loadInitialMovies();
 
