@@ -25,6 +25,7 @@ Desarrollado como desafío técnico para demostrar el uso de **Node.js**, arquit
 - **HTTP Client:** Axios
 - **Utilidades:** CORS, Dotenv, File System (fs)
 - **Frontend:** HTML / CSS / JS
+- **Testing:** Jest
 
 ## ⚙️ Instalación y Configuración
 
@@ -59,12 +60,20 @@ OMDB_API_KEY=tu_clave_aqui
 ### 4. Ejecutar el servidor
 
 ```bash
-node server.js
+npm start
 ```
 
 Verás un mensaje indicando que el servidor corre en el puerto **3000**.
 
-### 5. Acceder a la aplicación
+### 5. Correr los Tests 🧪
+
+Para validar la lógica de filtrado y ordenamiento:
+
+```bash
+npm test
+```
+
+### 6. Acceder a la aplicación
 
 Abre tu navegador web y visita:
 `http://localhost:3000`
@@ -87,7 +96,7 @@ GET http://localhost:3000/api/movies/search?title=godfather&status=visto&sort=ra
 ## 📂 Estructura del Proyecto
 
 ```text
-movie-watchlist/
+GoodWatch/
 ├── .env                  # Variables de entorno (API Key) - No incluido en repo
 ├── .env.example          # Plantilla de configuración
 ├── data/
@@ -98,8 +107,11 @@ movie-watchlist/
 │   ├── app.js
 │   └── favicon.ico
 ├── src/
-│   └── movieService.js   # Lógica de negocio (Fusión JSON + API)
-├── server.js             # Punto de entrada (Express Server)
+│   ├── movieService.js
+│   └── movieLogic.js
+├── tests/
+│   └── movieLogic.test.js
+├── server.js
 └── package.json
 ```
 
