@@ -82,10 +82,10 @@ Open your web browser and visit:
 
 The backend exposes the following public endpoints:
 
-| Method | Route                | Description                                    | Parameters (Query Params)                                         |
-| :----- | :------------------- | :--------------------------------------------- | :---------------------------------------------------------------- |
-| `GET`  | `/api/movies`        | Returns the complete list of processed movies. | None                                                              |
-| `GET`  | `/api/movies/search` | Performs searches, filtering, and sorting.     | `title` (text), `status` ('watched'/'pending'), `sort` ('rating') |
+| Method | Route                | Description                                    | Parameters (Query Params)                                                   |
+| :----- | :------------------- | :--------------------------------------------- | :-------------------------------------------------------------------------- |
+| `GET`  | `/api/movies`        | Returns the complete list of processed movies. | None                                                                        |
+| `GET`  | `/api/movies/search` | Performs searches, filtering, and sorting.     | `title` (text), `status` ('watched'/'pending'), `sort` ('rating'/'release') |
 
 ### Request Example
 

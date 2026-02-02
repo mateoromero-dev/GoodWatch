@@ -82,10 +82,10 @@ Abre tu navegador web y visita:
 
 El backend expone los siguientes endpoints públicos:
 
-| Método | Ruta                 | Descripción                                          | Parámetros (Query Params)                                          |
-| :----- | :------------------- | :--------------------------------------------------- | :----------------------------------------------------------------- |
-| `GET`  | `/api/movies`        | Retorna el listado completo de películas procesadas. | Ninguno                                                            |
-| `GET`  | `/api/movies/search` | Realiza búsquedas, filtros y ordenamientos.          | `title` (texto), `status` ('watched'/'pending'), `sort` ('rating') |
+| Método | Ruta                 | Descripción                                          | Parámetros (Query Params)                                                    |
+| :----- | :------------------- | :--------------------------------------------------- | :--------------------------------------------------------------------------- |
+| `GET`  | `/api/movies`        | Retorna el listado completo de películas procesadas. | Ninguno                                                                      |
+| `GET`  | `/api/movies/search` | Realiza búsquedas, filtros y ordenamientos.          | `title` (texto), `status` ('watched'/'pending'), `sort` ('rating'/'release') |
 
 ### Ejemplo de consulta
 
